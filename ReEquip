@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="project.css">
+    <link rel="icon" href="favicon.jpg" type="image/webp">
+    <title>Travel</title>
+</head>
+<body>
+<div id="wrapper">
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Communities">Books</a></li>
+            <li><a href="Food.html">Food</a></li>
+        </ul>
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search for a page...">
+            <button id="search-button">Search</button>
+        </div>
+        <script>
+            document.getElementById("search-button").addEventListener("click", function () {
+                const query = document.getElementById("search-input").value.toLowerCase();
+                const links = document.querySelectorAll("nav ul li a");
+    
+                for (let link of links) {
+                    if (link.getAttribute("href").toLowerCase().includes(query)) {
+                        window.location.href = link.getAttribute("href");
+                        return;
+                    }
+                }
+                alert("Page not found. Please try a different search term.");
+            });
+        </script>
+    </nav>
+</div>
+<header>
+    <h1><a href="index.html">Joshua Alfonso</a></h1>
+</header>  
+<main>
+    <h2>Favourite Places I've Travelled</h2>
+    <div id="gallery">
+        <div class="photo-card" data-location="Hanauma Bay, Hawaii">
+            <a href="I1.jpg"><img src="I1.jpg" alt="Hanauma Bay, Hawaii"></a>
+            <p>08/16/2024 - I went to Hanauma Bay on my Birthday. The waters were crystal-clear and there was plenty of marine life. I saw a triggerfish as I was snorkeling!</p>
+        </div>
+        <div class="photo-card" data-location="Byodo-In Temple, Hawaii">
+            <a href="I2.jpg"><img src="I2.jpg" alt="Byodo-In Temple, Hawaii"></a>
+            <p>08/16/2024 - The Byodo-In Temple was a peaceful experience with its lush greenry and breathtaking architecture. Inside the temple, there was a Buddha statue.</p>
+        </div>
+        <div class="photo-card" data-location="Lanikai Beach, Hawaii">
+            <a href="I3.jpg"><img src="I3.jpg" alt="Lanikai Beach, Hawaii"></a>
+            <p>08/18/2024 - Lanikai Beach was the most relaxing beach and had the softest white sands. Went kayaking to a smaller island nearby called The Mokuluas.</p>
+        </div>
+        <div class="photo-card" data-location="Manoa Falls, Hawaii">
+            <a href="I4.jpg"><img src="I4.jpg" alt="Manoa Falls, Hawaii"></a>
+            <p>08/19/2024 - Manoa Falls is a must-visit hiking destination with a stunning waterfall surrounded by lush rainforest scenery. Even though it was pouring rain, it was such a surreal moment with nature.</p>
+        </div>
+        <div class="photo-card" data-location="Sunset Beach, Hawaii">
+            <a href="I5.jpg"><img src="I5.jpg" alt="Sunset Beach, Hawaii"></a>
+            <p>08/23/2024 - This photo was taken on the last day of my trip to Hawaii. Sunset Beach is known for its sunsets and it didn't dissapoint!</p>
+        </div>
+        <div class="photo-card" data-location="Shark Cove, Hawaii">
+            <a href="I6.jpg"><img src="I6.jpg" alt="Shark Cove, Hawaii"></a>
+            <p>08/21/2024 - Shark's Cove offered plenty of marine life to see as you snorkel. I saw the fish Gill from Finding Nemo. Highly reccomend!</p>
+        </div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Joshua Alfonso | Follow me on <a href="josh.alfonso01">Instagram</a></p>
+</footer>
+</body>
+</html>
