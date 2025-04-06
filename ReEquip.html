@@ -19,29 +19,48 @@
         </ul>
       </nav>
     </div>
+    <div class="nav-right">
+      <span>Welcome, Jane</span>
+      <img src="icon.png" alt="User Icon" class="user-icon"/>
+    </div>
   </header>
   <main class="reequip-layout">
     <aside class="sidebar">
       <input type="text" placeholder="Search..." class="sidebar-search" />
-      <h3>SPORT ACTIVITY</h3>
-      <ul class="category">
-        <li>Skiing
-          <ul>
-            <li>Ski Poles</li>
-            <li>Skis</li>
-            <li>Ski bindings</li>
-            <li>Bib pant</li>
-            <li>Jackets</li>
-          </ul>
-        </li>
-        <li>Hiking
-          <ul>
-            <li>Trekking poles</li>
-            <li>Tent</li>
-            <li>Backpack</li>
-          </ul>
-        </li>
-      </ul>
+<h3>SPORT ACTIVITY</h3>
+<ul class="category">
+  <li class="active-category expanded">
+    <span class="category-label">Skiing</span>
+    <ul>
+      <li>Ski Poles</li>
+      <li>Skis</li>
+      <li>Ski bindings</li>
+      <li>Ski boots</li>
+    </ul>
+  </li>
+  <li>
+    <span class="category-label">Hiking</span>
+    <ul>
+      <li>Trekking poles</li>
+      <li>Tent</li>
+      <li>Backpack</li>
+    </ul>
+  </li>
+  <li>
+    <span class="category-label">Snowboarding</span>
+    <ul>
+      <li>Board</li>
+      <li>Boots</li>
+    </ul>
+  </li>
+  <li>
+    <span class="category-label">Climbing</span>
+    <ul>
+      <li>Harness</li>
+      <li>Ropes</li>
+    </ul>
+  </li>
+</ul>
     </aside>
     <section class="main-content">
       <h1>ReEquip</h1>
@@ -49,22 +68,38 @@
 
       <div class="gear-grid">
         <div class="gear-card">
-          <img src="jacket.jpg" alt="Teal Jacket">
-          <p>NWOT Arc'teryx Beta AR Gore-Tex Pro Hooded Shell Jacket Teal Green Womens M</p>
+          <img src="Image1.jpg" alt="Ski Poles">
+          <p>Leki GS Giant Sialom Racing Alpine Ski Poles, RED Black 50in 125cm World Cup</p>
           <button>Check Details</button>
         </div>
         <div class="gear-card">
-          <img src="skis.jpg" alt="Skis">
-          <p>K2 Triaxial USA 555000 GS 190CM All Mountain Skis w/ Salomon Driver 797 Bindings</p>
+          <img src="Image2.jpg" alt="Mountain Skis">
+          <p>K2 Triaxial USA CS 190CM All Mountain Skis W/ Salomon Driver 797 Bindings</p>
           <button>Check Details</button>
         </div>
         <div class="gear-card">
-          <img src="pants.jpg" alt="Black Pants">
-          <p>Arc'teryx Sabre Pants Men's Large Black Gortex Recco Snowboard Ski Baggy Gore Tex</p>
+          <img src="Image3.jpg" alt="Ski Boots">
+          <p>Salomon S/Pro 120 HV Ski Boots 26/27.5 D Pro Liner 3D Custom Shell HD All Black</p>
           <button>Check Details</button>
         </div>
       </div>
     </section>
   </main>
+  <script>
+    document.querySelectorAll('.category > li').forEach(item => {
+      item.addEventListener('click', function (e) {
+        // Ignore clicks on subitems
+        if (e.target !== this) return;
+  
+        // Close all others
+        document.querySelectorAll('.category > li').forEach(el => {
+          if (el !== this) el.classList.remove('expanded');
+        });
+  
+        // Toggle clicked one
+        this.classList.toggle('expanded');
+      });
+    });
+  </script>
 </body>
 </html>
