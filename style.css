@@ -11,7 +11,7 @@
   
   .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 1rem 2rem;
     background: #1a1a1a;
@@ -20,6 +20,11 @@
     z-index: 10;
   }
   
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
   .logo {
     height: 30px;
   }
@@ -39,31 +44,52 @@
   .hero {
     height: 100vh;
     background: url('peakpx.jpg') no-repeat center center/cover;
-    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 1rem;
+    padding-top: 60px;
   }
   
   .overlay {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
   }
   
   .title {
     color: white;
     font-size: 4rem;
     font-weight: bold;
-    margin-bottom: 1.5rem;
     font-family: serif;
+    margin-bottom: 2rem;
   }
   
   .search-container {
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .search-container button {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
   }
   
   .search-container input {
@@ -71,21 +97,21 @@
     font-size: 1rem;
     width: 250px;
     border: none;
-    border-radius: 6px 0 0 6px;
+    outline: none;
+    background: transparent; 
+    color: white;
   }
   
-  .search-container button {
-    padding: 0.75rem 1rem;
-    border: none;
-    background: white;
-    cursor: pointer;
-    border-radius: 0 6px 6px 0;
+  .search-container input::placeholder {
+    color: #ddd;
+
   }
   
   .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 1rem;
   }
   
   .btn {
@@ -96,9 +122,112 @@
     border-radius: 6px;
     font-weight: bold;
     transition: background 0.3s;
+    min-width: 180px;
+    text-align: center;
   }
   
   .btn:hover {
     background: #e6e6e6;
   }
+
+  .navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1a1a1a;
+  }
   
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .logo {
+    height: 30px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .nav-links a.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+  }
+  
+  /* Layout */
+  .reequip-layout {
+    display: flex;
+    padding: 2rem;
+  }
+  
+  .sidebar {
+    width: 250px;
+    padding-right: 2rem;
+  }
+  
+  .sidebar-search {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .category {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .category > li {
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .category li ul {
+    list-style: none;
+    padding-left: 1rem;
+    font-weight: normal;
+  }
+  
+  .main-content {
+    flex: 1;
+  }
+  
+  .gear-grid {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .gear-card {
+    width: 200px;
+    text-align: center;
+  }
+  
+  .gear-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .gear-card button {
+    margin-top: 0.5rem;
+    background: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
